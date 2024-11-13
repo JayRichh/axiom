@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  -webkit-font-smoothing: none;
+  font-size: 11px;
+  font-family: 'Console';
+}
+#root,
+body {
+  height: 100vh;
+  width: 100vw;
+  margin: 0px;
+  font-smooth: never;
+-webkit-font-smoothing : none;
+background-color: black;
+  color: white;
+}
+
+canvas {
+  height: 100vh;
+  width: 100vw;
+  image-rendering: pixelated;
+}
+
+.stats-box {
+  top: 108px !important;
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+}
+
+.stats-box > canvas {
+  position: initial !important;
+}
