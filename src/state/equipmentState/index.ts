@@ -1,7 +1,7 @@
 import { create } from 'zustand'
 import { Debug } from '../debugState'
 import { DataParameter } from '../types'
-import { defaultSmg, EquipmentItem, GunName } from '../../config/guns'
+import { defaultSmg, defaultPistol, EquipmentItem, GunName } from '../../config/guns'
 import update from 'immutability-helper';
 import { GunOptic } from '../../config/gunAttachments'
 import { EquipmentType } from '../../constants'
@@ -78,7 +78,8 @@ export const useEquipmentState = create<EquipmentStateStore>((_, get) => ({
       type: EquipmentType.NONE, 
       itemName: GunName.NONE
     },
-    defaultSmg,
+    defaultPistol, // Pistol as first weapon (1)
+    defaultSmg,    // SMG variants start at index 2
     update(defaultSmg, { optic: { $set: GunOptic.REFLEX }}),
     update(defaultSmg, { optic: { $set: GunOptic.ACOG }}),
   ]

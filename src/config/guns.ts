@@ -3,6 +3,7 @@ import { defaultAcog, defaultReflex, GunOptic, GunOptics } from './gunAttachment
 
 export enum GunName {
   NONE = 'NONE',
+  PISTOL = 'PISTOL',
   SMG = 'SMG'
 }
 
@@ -26,6 +27,24 @@ export type None = {
 };
 
 export type EquipmentItem = None | Gun;
+
+export const defaultPistol: Gun = {
+  type: EquipmentType.GUN,
+  itemName: GunName.PISTOL,
+  
+  roundsPerMag: 12,
+  roundsLeft: 12,
+  ammo: 12 * 4,
+  ammoMax: 12 * 4,
+
+  optic: null,
+  attachments: {
+    optics: {
+      [GunOptic.REFLEX]: defaultReflex,
+      [GunOptic.ACOG]: defaultAcog
+    }
+  }
+}
 
 export const defaultSmg: Gun = {
   type: EquipmentType.GUN,

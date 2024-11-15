@@ -7,6 +7,44 @@ export const WEAPONS_DATA = {
     equipTime: 0,
     unequipTime: 0
   },
+  'PISTOL': {
+    damage: 15,
+    rateOfFire: 60,
+    magCapacity: 12,
+    weight: 0.8,
+
+    equipTime: 300,
+    unequipTime: 300,
+
+    // Increased recoil values for better sprite animation
+    recoilXMin: -0.0015,
+    recoilXMax: 0.0015,
+    recoilYMin: 0.002,
+    recoilYMax: 0.003,
+
+    // Increased kick values for better sprite animation
+    kickXMin: 0.003,
+    kickXMax: 0.005,
+    kickYMin: 0.004,
+    kickYMax: 0.006,
+
+    // Increased knockback for better frame cycling
+    knockbackMin: 0.15,
+    knockbackMax: 0.25,
+    spread: 0.035,
+
+    renderParams: {
+      spriteSheet: 'guns/pistol/RightAndLeftSpriteShoot.png',
+      zoom: 2,
+      frames: 4, // Using only top 4 frames for recoil
+      frameWidth: 109,  // Width of each frame in the sprite sheet
+      frameHeight: 110, // Height of each frame in the sprite sheet
+      
+      ironsight: {
+        zoom: 2.5
+      }
+    },
+  },
   'SMG':  {
     damage: 10,
     rateOfFire: 95,
@@ -66,6 +104,7 @@ export const WEAPONS_DATA = {
 }
 
 export const SMG_PARAMS = WEAPONS_DATA.SMG.renderParams;
+export const PISTOL_PARAMS = WEAPONS_DATA.PISTOL.renderParams;
 
 type OpticParams = {
   model: string
